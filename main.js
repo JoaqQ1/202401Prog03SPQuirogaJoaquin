@@ -267,9 +267,7 @@ async function AgregarPersona()
             ResetearUIPrincipal();
             CargarPersonasXML();
             alert('No se pudo realizar la operación!');
-        } finally {
-            MostrarSpinnerOcultarAbm(true);
-        }
+        } 
     }
 }
 function MostrarSpinnerOcultarAbm(mostrar) {
