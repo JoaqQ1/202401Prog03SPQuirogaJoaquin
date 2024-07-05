@@ -503,7 +503,7 @@ function ColocarDatosPersona(persona)
     $('apellido').value = persona.apellido;
     $('año').value = persona.fechaNacimiento.slice(0,4);
     $('mes').value = persona.fechaNacimiento.slice(4,6);
-    $('dia').value = persona.fechaNacimiento.slice(7);
+    $('dia').value = persona.fechaNacimiento.slice(6);
     if (persona.paisOrigen !== 'N/A')
     {
         $('atributo1').value = persona.paisOrigen;
