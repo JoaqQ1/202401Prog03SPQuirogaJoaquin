@@ -1,6 +1,7 @@
 const TABLA_PERSONA = 'tablaPersonas';
 const ABM = 'frmAbm';
 const API = 'https://examenesutn.vercel.app/api/PersonaCiudadanoExtranjero';
+var PERSONAS = ''
 
 CargarPersonasXML();
 const botonAgregar = $('btnAgregar');
@@ -120,6 +121,7 @@ function ObtenerPersonasXML(callback)
         if (this.readyState == 4) {
             if (this.status == 200) {
                 let personas = ParsearPersonas(this.response);
+                PERSONAS = personas;
                 callback(personas, null);
             } else {
                 callback(null, new Error("Fallo en la carga de personas"));
@@ -350,30 +352,18 @@ function VaciarElemento(elementoAVaciar)
     } 
 }
 function ModificarTablaIncluyendo(persona,incluir){
-    ObtenerPersonasXML((personas, error) => {
-        if (error) {
-            console.log(error.message);
-        } else {
-            personasActualizada = personas.filter(p=>p.id != persona.id);
-            if(incluir){
-                personasActualizada.push(persona);
-            }
-            CargarTabla(personasActualizada);
-            MostrarSpinnerOcultarPrincipal(false);
-        }
-    });
+    PERSONAS = PERSONAS.filter(p=>p.id != persona.id);
+    if(incluir){
+        PERSONAS.push(persona);
+    }
+    CargarTabla(PERSONAS);
+    MostrarSpinnerOcultarPrincipal(false);
 }
 function ActualizarTabla(persona) 
 {
-    ObtenerPersonasXML((personas, error) => {
-        if (error) {
-            console.log(error.message);
-        } else {
-            personas.push(persona);
-            CargarTabla(personas);
-            MostrarSpinnerOcultarPrincipal(false);
-        }
-    });
+    PERSONAS.push(persona);
+    CargarTabla(PERSONAS);
+    MostrarSpinnerOcultarPrincipal(false);
 }
 
 function MostrarModificarPersona(event){
