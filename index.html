@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FormularioLista</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="spinner" id="spinner"></div>
+    <div class="contenedorPrincipal" id="frmPrincipal">
+        <h1>Formulario Lista</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Dni</th>
+                    <th>Pais Origen</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody id="tablaPersonas">
+                
+            </tbody>
+        </table>
+        <button id="btnAgregar">Agregar persona</button>
+    </div>
+    <div class="contenedorAbm" id="frmAbm">
+        <h1 id="tituloABM">Formulario ABM</h1>
+        <div id="data">
+            
+            <!-- <div id="id">Id</div> -->
+            <div>ID: <span id="id"></span></div>
+            <div>Nombre: <input class='datos'type="text" id="nombre"></div> 
+            <div>Apellido: <input class='datos' type="text" id="apellido"></div> 
+            <div>Año: <input class='datos' id="año"></div> 
+            <div>Mes: <input class='datos' id="mes"></div> 
+            <div>Dia: <input class='datos' id="dia"></div> 
+            <select id="tipo">Tipo
+                <option value="--" >--</option>
+                <option value="Ciudadano">Ciudadano</option>
+                <option value="Extranjero">Extranjero</option>
+            </select>
+            <div display="none">Atributo1: <input class='datos' type="text" id="atributo1"></div> 
+            <button id="btnCancelar">Cancelar</button>
+            <button id="btnAceptar">Aceptar</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
